@@ -1,6 +1,8 @@
 import ProductCard from "./ProductCard";
 
-const ItemListContainer = () => {
+const ItemListContainer = ( props ) => {
+
+    const { greeting } = props;
 
     // products Mock (add backend later)
     const products = [
@@ -41,7 +43,7 @@ const ItemListContainer = () => {
         <section id="ItemListContainer" className="mx-auto max-w-7xl px-6 py-24">
 
             <h2 className="mb-12 text-center text-3xl font-semibold">
-                Nuestros Cafés
+                {greeting}
             </h2>
 
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

@@ -13,7 +13,7 @@ function App() {
       <HeroSection>
 
       </HeroSection>
-      <ItemListContainer>
+      <ItemListContainer greeting="Nuestros Cafés">
 
       </ItemListContainer>
     </>
