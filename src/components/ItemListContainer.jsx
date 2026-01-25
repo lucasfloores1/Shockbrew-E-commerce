@@ -1,56 +1,35 @@
-import ProductCard from "./ProductCard";
+import React, { use } from "react";
+import { getProducts } from "../mock/data";
+import { useState, useEffect } from "react";
+import ItemList from "./ItemList";
+import { useParams } from "react-router-dom";
 
-const ItemListContainer = ( props ) => {
+const ItemListContainer = ( {greeting } ) => {
 
-    const { greeting } = props;
+    const [products, setProducts] = useState([]);
+    const { type } = useParams();
 
-    // products Mock (add backend later)
-    const products = [
-        {
-            id: 1,
-            name: "Colombia",
-            price: "$2000",
-            image: "/images/example.jpg",
-        },
-        {
-            id: 2,
-            name: "Brasil",
-            price: "$2000",
-            image: "/images/example.jpg",
-        },
-        {
-            id: 3,
-            name: "Etiopía",
-            price: "$2000",
-            image: "/images/example.jpg",
-        },
-        {
-            id: 4,
-            name: "Perú",
-            price: "$2000",
-            image: "/images/example.jpg",
-        },
-        {
-            id: 5,
-            name: "Honduras",
-            price: "$2000",
-            image: "/images/example.jpg",
-        }
-    ];
+    useEffect(() => {
+        getProducts()
+            .then(res => {
+            if (type) {
+                const filteredProducts = res.filter(product => product.type === type);
+                setProducts(filteredProducts);
+            } else {
+                setProducts(res);
+            }
+        });
+    }), [type];
     
     return (
         // Section de productos
         <section id="ItemListContainer" className="mx-auto max-w-7xl px-6 py-24">
 
             <h2 className="mb-12 text-center text-3xl font-semibold">
-                {greeting}
+                {greeting} {type ? type.charAt(0).toUpperCase() + type.slice(1) : "Todos los tipos"}
             </h2>
 
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                {products.map(product => (
-                    <ProductCard key={product.id} product={product} />
-                ))}
-            </div>
+            <ItemList products={products}/>
 
         </section>
     )

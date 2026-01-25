@@ -1,7 +1,9 @@
+import React from "react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
-const ProductCard = ({ product }) => {
+const Item = ({ product }) => {
   return (
         <Card className= "overflow-hidden">
             <img
@@ -12,14 +14,16 @@ const ProductCard = ({ product }) => {
 
             <CardContent className="p-4">
                 <h3 className="pl-3 text-lg font-medium">{product.name}</h3>
-                <p className="pl-3 text-sm text-muted-foreground">{product.price}</p>
+                <p className="pl-3 text-sm text-muted-foreground">${product.price}</p>
             </CardContent>
 
             <CardFooter>
-                <Button className="w-full">Agregar al carrito</Button>
+                <Button asChild className="w-full">
+                    <Link to={`/item/${product.id}`}>Ver Más</Link>
+                </Button>
             </CardFooter>
         </Card>
   );
 }
 
-export default ProductCard;
+export default Item;
