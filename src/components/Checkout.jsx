@@ -24,8 +24,13 @@ function IconInput({ icon : Icon, className = "", ...props }) {
 export default function Checkout() {
     const { cart, getTotal, clearCart, cartQuantity } = useContext(CartContext)
 
-    const [buyer, setBuyer] = useState({});
-    const [validEmail, setValidEmail] = useState('')
+    const [buyer, setBuyer] = useState({
+        name: "",
+        lastname: "",
+        email: "",
+        phone: ""
+    });
+    const [validEmail, setValidEmail] = useState("")
     const [orderId, setOrderId] = useState(null)
     const [error, setError] = useState(null)
     const [process, setProcess] = useState(false)
@@ -39,6 +44,8 @@ export default function Checkout() {
 
     const createOrder = (e) => {
         setError(null)
+        e.preventDefault()
+
         if (!buyer.name || !buyer.lastname || !buyer.email || !validEmail || !buyer.phone) {
             setError("Por favor complete los campos")
             return
@@ -48,32 +55,27 @@ export default function Checkout() {
             setError("Los correos no coinciden")
             return
         }
-        e.preventDefault()
-        if(!buyer.name || !buyer.lastname || !buyer.email || !validEmail){
-            setError('Por favor complete los campos')
-        }else if (buyer.email !== validEmail){
-            setError('Los correos no coiciden')
-        }else{
-            setProcess(true)
-            setError(null)
-            let order = {
-                buyer : buyer,
-                products : cart,
-                total : getTotal(),
-                date : serverTimestamp()
-            }
-            const sales = collection(db, 'orders')
-            addDoc(sales, order)
-                .then((res) => {
-                    setOrderId(res.id)
-                    clearCart()
-                })
-                .catch((error) => {
-                    setError('Error al crear la orden')
-                    console.log(error)
-                })
-                .finally(()=>setProcess(false))
-            }        
+
+        setProcess(true);
+
+        const order = {
+            buyer,
+            products: cart,
+            total: getTotal(),
+            date: serverTimestamp()
+        };
+
+        const sales = collection(db, "orders");
+
+        addDoc(sales, order)
+            .then((res) => {
+            setOrderId(res.id);
+            clearCart();
+            })
+            .catch(() => {
+            setError("Error al crear la orden");
+            })
+            .finally(() => setProcess(false));     
     }
 
     if (!cart.length && !orderId) {
