@@ -29,19 +29,13 @@ La navegación se gestiona mediante rutas dinámicas y el estado global del carr
 - Context API (estado global en React)
 
 ### 🎨 Estilos y UI
+- [Shadcn UI](https://ui.shadcn.com/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [Radix UI](https://www.radix-ui.com/)
 - [Lucide React](https://lucide.dev/)
-- [clsx](https://github.com/lukeed/clsx)
-- [tailwind-merge](https://github.com/dcastil/tailwind-merge)
-- [class-variance-authority](https://cva.style/)
 
 ### 🔥 Servicios
 - [Firebase](https://firebase.google.com/)
-
-### 🛠️ Herramientas de desarrollo
-- [ESLint](https://eslint.org/)
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react)
 
 ---
 
