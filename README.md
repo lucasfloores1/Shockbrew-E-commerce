@@ -1,4 +1,9 @@
+<p align="center">
+  <img src="public/logo.svg" alt="ShockBrew Logo" width="180"/>
+</p>
+
 # ☕ ShockBrew Ecommerce
+
 ## Descripción
 
 Aplicación web desarrollada con **React + Vite** que simula una tienda online de café.  
@@ -41,7 +46,8 @@ La navegación se gestiona mediante rutas dinámicas y el estado global del carr
 
 ## 💻 Versión Hosteada
 
-Si quiere ver el proyecto en vivo, puede visitarlo en [Shockbrew Store](https://shockbrew-ecommerce.vercel.app/)
+Si quiere ver el proyecto en vivo, puede visitarlo en  
+👉 [Shockbrew Store](https://shockbrew-ecommerce.vercel.app/)
 
 ---
 
