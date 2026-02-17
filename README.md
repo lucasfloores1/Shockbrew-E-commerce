@@ -1,8 +1,7 @@
-<p align="center">
-  <img src="public/logo.svg" alt="ShockBrew Logo" width="180"/>
-</p>
-
-# ☕ ShockBrew Ecommerce
+<h1>
+  <img src="public/logo.svg" alt="ShockBrew Logo" width="28" style="vertical-align: middle;"/>
+  ShockBrew Ecommerce
+</h1>
 
 ## Descripción
 
