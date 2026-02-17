@@ -46,7 +46,7 @@ La navegación se gestiona mediante rutas dinámicas y el estado global del carr
 ---
 
 ## Versión hosteada
-Si quiere ver el proyecto en vivo, puede visitarlo en [Shockbrew Store](https://shockbrew-store.vercel.app/)
+Si quiere ver el proyecto en vivo, puede visitarlo en [Shockbrew Store](https://shockbrew-ecommerce.vercel.app/)
 ---
 
 ## 📥 Clonar el repositorio
