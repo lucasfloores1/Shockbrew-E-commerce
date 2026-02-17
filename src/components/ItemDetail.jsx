@@ -1,14 +1,22 @@
-import React from "react";
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "./ui/card.jsx";
+import React, { useContext } from "react";
+import { Card, CardContent, CardFooter } from "./ui/card.jsx";
 import ItemCount from "./ItemCount.jsx";
+import { CartContext } from "@/context/CartContext.jsx";
 
 const ItemDetail = ( {product } ) => {
 
-    const onAdd = (cantidad)=>{
-        console.log(`Se agregaron ${cantidad} unidades al carrito`);
+    const {addProduct, updateQuantity} = useContext(CartContext);
+
+    const onAdd = (qty)=>{
+        addProduct(product, qty)
     }
+
+    const onUpdateCart = (qty) => {
+        updateQuantity(product.id, qty)
+    }
+    
     return (
-        <div className="pt-20">
+        <div className="pt-10">
         <Card className="mx-auto max-w-md overflow-hidden">
             <img
                 src={product.image}
@@ -35,7 +43,7 @@ const ItemDetail = ( {product } ) => {
             </CardContent>
 
             <CardFooter className="flex flex-col p-6 items-center">
-                <ItemCount onAdd={onAdd} stock={product.stock}></ItemCount>
+                <ItemCount onAdd={onAdd} onUpdateCart={onUpdateCart} stock={product.stock}></ItemCount>
             </CardFooter>
         </Card>
         </div>

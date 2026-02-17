@@ -1,16 +1,58 @@
-# React + Vite
+# ☕ ShockBrew Ecommerce
+## Descripción
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada con **React + Vite** que simula una tienda online de café.  
+Incluye navegación por rutas, catálogo de productos, carrito y proceso de checkout.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 ¿Qué incluye la aplicación?
 
-## React Compiler
+- 🏠 **Landing Page** (Hero principal)
+- 🛍️ **Tienda / Store** con listado de productos
+- 📂 **Filtrado por categorías**
+- 🔎 **Detalle individual de producto**
+- 🛒 **Carrito de compras** (gestionado con Context API)
+- 💳 **Checkout**
+- ❌ **Página 404 / Error**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+La navegación se gestiona mediante rutas dinámicas y el estado global del carrito se maneja con un `CartProvider`.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧩 Librerías y Tecnologías Utilizadas
+
+### ⚛️ Frontend
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [React Router DOM](https://reactrouter.com/)
+- Context API (estado global en React)
+
+### 🎨 Estilos y UI
+- [TailwindCSS](https://tailwindcss.com/)
+- [Radix UI](https://www.radix-ui.com/)
+- [Lucide React](https://lucide.dev/)
+- [clsx](https://github.com/lukeed/clsx)
+- [tailwind-merge](https://github.com/dcastil/tailwind-merge)
+- [class-variance-authority](https://cva.style/)
+
+### 🔥 Servicios
+- [Firebase](https://firebase.google.com/)
+
+### 🛠️ Herramientas de desarrollo
+- [ESLint](https://eslint.org/)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react)
+
+---
+
+## Versión hosteada
+Si quiere ver el proyecto en vivo, puede visitarlo en [Shockbrew Store](https://shockbrew-store.vercel.app/)
+---
+
+## 📥 Clonar el repositorio
+
+```bash
+git clone https://github.com/TU_USUARIO/TU_REPO.git
+cd shockbrew-ecommerce
+npm install
+npm run dev

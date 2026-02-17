@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import {  NavigationMenu,  NavigationMenuItem,  NavigationMenuLink,  NavigationMenuList,} from "@/components/ui/navigation-menu"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import CartWidget from "./CartWidget"
 import Logo from "../assets/logo.svg"
-import { useLocation, Link } from "react-router-dom"
+import { useLocation, Link, NavLink } from "react-router-dom"
 
 
 const Navbar = () => {
@@ -55,15 +55,18 @@ const Navbar = () => {
 
               <DropdownMenuContent className="w-40">
                 <DropdownMenuItem asChild>
-                  <Link to="/category/honey">Honey</Link>
+                  <Link to="/store">Todos los productos</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/store/category/cold-brew">Cold Brew</Link>
                 </DropdownMenuItem>
 
                 <DropdownMenuItem asChild>
-                  <Link to="/category/lavado">Lavado</Link>
+                  <Link to="/store/category/en-grano">En grano</Link>
                 </DropdownMenuItem>
 
                 <DropdownMenuItem asChild>
-                  <Link to="/category/natural">Natural</Link>
+                  <Link to="/store/category/molido">Molido</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -79,7 +82,7 @@ const Navbar = () => {
                   hover:bg-blue-500
                 `}
               >
-                <CartWidget count={1} />
+                <CartWidget/>
               </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>

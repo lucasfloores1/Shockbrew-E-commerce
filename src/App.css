@@ -1,1 +1,11 @@
+html, body {
+  cursor: default;
+}
 
+button, a, [role="button"] {
+  cursor: pointer;
+}
+
+input, textarea, [contenteditable="true"] {
+  cursor: text;
+}

@@ -1,23 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
-const ItemCount = ( { stock, onAdd } ) => {
+const ItemCount = ( { stock, onAdd, onUpdateCart } ) => {
 
-    const [counter, setCounter] = React.useState(1);
+    const [counter, setCounter] = useState(1);
+    const [addedToCart, setAddedToCart] = useState(false);
 
     const sumar = () => {
         if (counter < stock) {
-            setCounter(counter + 1);
+            const newValue = counter + 1;
+            setCounter(newValue);
+
+            if (addedToCart) {
+                onUpdateCart(newValue);
+            }
         }
     }
 
     const restar = () => {
         if (counter > 1) {
+            const newValue = counter -1
             setCounter(counter - 1);
+            
+            if (addedToCart) {
+                onUpdateCart(newValue)
+            }
         }
+
     }
 
     const agregar = () => {
+        setAddedToCart(true)
         onAdd(counter);
     }    
 
@@ -32,7 +46,12 @@ const ItemCount = ( { stock, onAdd } ) => {
                 <Button variant="outline" onClick={sumar} disabled={counter >= stock}>+</Button>
             </div>
 
-            <Button className="w-full" onClick={agregar} disabled={stock === 0}>Agregar al carrito</Button>
+            { !addedToCart ? <Button className="w-full" onClick={agregar} disabled={stock === 0}>Agregar al carrito</Button>
+            :
+            <Button className="w-full" asChild variant="secondary">
+                <Link to="/cart">Ir al carrito</Link>
+            </Button>
+            }
 
         </div>
     )
