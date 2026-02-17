@@ -1,5 +1,5 @@
 <h1>
-  <img src="public/logo.svg" alt="ShockBrew Logo" width="18" style="vertical-align: middle;"/>
+  <img src="public/logo.svg" alt="ShockBrew Logo" width="10" style="vertical-align: middle;"/>
   ShockBrew Ecommerce
 </h1>
 
