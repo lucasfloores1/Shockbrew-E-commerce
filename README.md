@@ -1,8 +1,8 @@
-<h1>
-  <img src="public/logo.svg" alt="ShockBrew Logo" width="10" style="vertical-align: middle;"/>
-  ShockBrew Ecommerce
-</h1>
+<p align="center">
+  <img src="public/logo.svg" alt="ShockBrew Logo" width="60"/>
+</p>
 
+# ShockBrew Ecommerce
 ## Descripción
 
 Aplicación web desarrollada con **React + Vite** que simula una tienda online de café.  
