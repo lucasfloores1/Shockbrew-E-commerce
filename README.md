@@ -52,7 +52,7 @@ Si quiere ver el proyecto en vivo, puede visitarlo en [Shockbrew Store](https://
 ## 📥 Clonar el repositorio
 
 ```bash
-git clone https://github.com/TU_USUARIO/TU_REPO.git
+git clone https://github.com/lucasfloores1/Shockbrew-E-commerce.git
 cd shockbrew-ecommerce
 npm install
 npm run dev
